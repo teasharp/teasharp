@@ -1,16 +1,16 @@
-import os 
+import os
 import sys
 import platform as pl
 
-from colorama import init
+from os import path
 from random import choice
 from time import sleep
 
-from os import path
+from colorama import init
 
-from teasharp.utils.help import hlp
+from teasharp.utils.ansi_color import BACKGROUND, EXTRA_ANSI, FOREGROUND
 from teasharp.utils.cool_print import cool_print
-from teasharp.utils.ansi_color import FOREGROUND, BACKGROUND, EXTRA_ANSI
+from teasharp.utils.help import hlp
 
 __version__ = '1.5.0'
 
