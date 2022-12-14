@@ -544,27 +544,25 @@ Remember: if the file you wan't to import is not in the TeaSharp folder, you mus
 
         elif iva:
 
-            if len(com_list) < 3:
+            if len(com_list) > 3:
                 print("What I need to assign? If you need to assign something put the data after the equal sign")
+                return
+
+            if data[0] == "True":
+                variables[cnl] = True
             
-            else:
+            elif data[0] == "False":
+                variables[cnl] = False
+            
+            try:
                 
-                if data[0] == "True":
-                    variables[cnl] = True
+                if len(com_list) != 3:
+                    raise ValueError("It's not a number... But wait! Who reads this? kek")
                 
-                elif data[0] == "False":
-                    variables[cnl] = False
-                
-                try:
-                    
-                    if len(com_list) == 3:
-                        variables[cnl] = int(com_list[2])
-                    
-                    else:
-                        raise ValueError("It's not a number... But wait! Who reads this? kek")
-                
-                except ValueError:
-                    variables[cnl] = " ".join(data).replace("\\n","\n")
+                variables[cnl] = int(com_list[2])
+            
+            except ValueError:
+                variables[cnl] = " ".join(data).replace("\\n","\n")
         
         elif com_str == "who did this all stuff, and why?":
             cls()
@@ -580,7 +578,7 @@ Shreder95ua     ▐█▀█
             print("\033[0m")
             cls()
         
-        elif com=="end":
+        elif com == "end":
             pass
 
         elif com_str.lower() in Procedures:
@@ -650,12 +648,10 @@ def interpret(path: str) -> None:
             
             try:
                 
-                if echo_on_mode:
-                    com_str = input()
-                
-                else:
+                if not echo_on_mode:
                     com_str = input(f"[{object_sel}]: ")
                 
+                com_str = input()
                 interpretator(com_str, 0)
 
             except KeyboardInterrupt:
