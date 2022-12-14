@@ -24,15 +24,18 @@ code_list = {}
 variables = {}
 imported_modules = []
 
-title = '''\033[30m\033[106m █████ ████   █     ████ █   █   █   ███  ███   
-\033[46m   █   █     ███   █     █   █  ███  ████ ████  
-\033[104m   █   ████  ███    ███  █████ █████ ███  ███   
-\033[44m   █   █     █ █       █ █   █ █   █ █ █  █     
-\033[43m   █   ████ █   █  ████  █   █ █   █ █  █ █     
+title = '''
+\u001b[30m\u001b[106m █████ ████   █     ████ █   █   █   ███  ███   
+\u001b[46m   █   █     ███   █     █   █  ███  ████ ████  
+\u001b[104m   █   ████  ███    ███  █████ █████ ███  ███   
+\u001b[44m   █   █     █ █       █ █   █ █   █ █ █  █     
+\u001b[43m   █   ████ █   █  ████  █   █ █   █ █  █ █     
  ███████████     ██████████████████████████████ 
                                                 
               PRAY WITH UKRAINE!                
-\033[0m\033[92mlmao, who needs licenses? 2022 3 march-iNfInItY. Shreder95ua!
+\u001b[0m\u001b[92m
+lmao, who needs licenses? 2022 3 march-iNfInItY. Shreder95ua!
+\u001b[0m
 '''
 
 color = "green"
@@ -288,7 +291,7 @@ def interpretator(com_str: str, current_line: int, is_run: bool = False) -> any:
 
             for _row in range(0,objects["meta_bg"]["height"]):
                 for _col in range(0,objects["meta_bg"]["width"]):
-                    looknoobj = looknoobj + BACKGROUND[objects["meta_bg"]["bgcolor"]] + FOREGROUND[objects["meta_bg"]["fgcolor"]] + objects["meta_bg"]["tile"] + "\033[0m"
+                    looknoobj = looknoobj + BACKGROUND[objects["meta_bg"]["bgcolor"]] + FOREGROUND[objects["meta_bg"]["fgcolor"]] + objects["meta_bg"]["tile"] + "\u001b[0m"
 
                 looknoobj = looknoobj + "\n"
 
@@ -308,7 +311,7 @@ def interpretator(com_str: str, current_line: int, is_run: bool = False) -> any:
                     del objects[objtodel]
                 
                 else:
-                    print(FOREGROUND["red"] + EXTRA_ANSI["flash"] + "ACCESS DENIED\033[0m")
+                    print(FOREGROUND["red"] + EXTRA_ANSI["flash"] + "ACCESS DENIED\u001b[0m")
             
             except KeyError:
                 print("No object called" + objtodel + ". Maybe you allready deleted it?")
@@ -566,7 +569,7 @@ Remember: if the file you wan't to import is not in the TeaSharp folder, you mus
         
         elif com_str == "who did this all stuff, and why?":
             cls()
-            print(f'''\033[103m\033[34m\t\t█▐█▐▌
+            print(f'''\u001b[103m\u001b[34m\t\t█▐█▐▌
  Made by        ▌ ▄ ▌
 Shreder95ua     ▐█▀█
 \t\t█  ▐▌''')
@@ -575,7 +578,7 @@ Shreder95ua     ▐█▀█
             sleep(2)
             cool_print("btw if ur ukrainian check out 5brocks.netlify.com")
             input()
-            print("\033[0m")
+            print("\u001b[0m")
             cls()
         
         elif com == "end":
@@ -594,15 +597,15 @@ def interpret(path: str) -> None:
 
     if sys.version_info[0:2] < (3, 7):
 
-        print('\033[30m\033[43m',end='')
+        print('\u001b[30m\u001b[43m',end='')
         cool_print(''' █████ ████   █     ████ █   █   █   ███  ███   
     █   █     ███   █     █   █  ███  ████ ████  ''',title=True)
-        print('\033[41m',end='')
+        print('\u001b[41m',end='')
         cool_print('''    █   ████  ███    ███  █████ █████ ███  ███  
     █   █     █ █       █ █   █ █   █ █ █  █     
         █   ████ █   █  ████  █   █ █   █ █  █ █    
     ██████████████████████████████████████████████  ''',title=True)
-        print("\033[0m",end='')
+        print("\u001b[0m",end='')
         cool_print(f"Warning! Your Python version is {pl.python_version()}!")
         cool_print("This version does not have features that were added in Python 3.7:")
         cool_print("sorting, getting information about Windows version, and many-many others.")
